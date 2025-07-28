@@ -1,0 +1,15 @@
+<launch>
+
+    <arg name="coefficients" default="1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 -1.0"/>
+    <arg name="num_points" default="5000" />
+    <arg name="tolerance" default="0.05" />
+
+    <!-- 启动的节点 -->
+    <node pkg="point_cloud_generator" type="pc_generator_finished" name="point_cloud_generator_node" output="screen">
+        
+        <param name="coefficients" type="string" value="$(arg coefficients)" />
+        <param name="num_points" value="$(arg num_points)" />
+        <param name="tolerance" value="$(arg tolerance)" />
+
+    </node>
+</launch>
